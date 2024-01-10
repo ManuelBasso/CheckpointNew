@@ -1,7 +1,3 @@
-# CheckpointNew
-
-# Checkpoint
-
 # Traccia : Applicazione Java per la Gestione di una una lista di compiti (To-Do List).
 La tua applicazione dovrebbe essere composta da due classi: Task e ToDoList.
 

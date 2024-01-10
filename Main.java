@@ -28,16 +28,18 @@ public class Main {
         System.out.println(" ");
 
         Scanner input = new Scanner(System.in);
-        System.out.println("Insert Id of the task to change status in COMPLETED:");
+        System.out.println("Insert Id of the task to change status:");
         String id = input.next();
-        checkChangeStatus(tDL.changeStatus(id, true));
+        System.out.println("Would do you like it to change it in Completed (digit true) or not completed(digit false)");
+        Boolean choice = input.nextBoolean();
+        checkChangeStatus(tDL.changeStatus(id, choice));
         System.out.println("Show list");
         tDL.printList();
         System.out.println(" ");
 
-        System.out.println("Inserire id della task da visualizzare:");
+        System.out.println("Insert id of the task to show:");
         id = input.next();
-        System.out.println(tDL.showTaskByID(id));
+        checkTaskNotNull((tDL.showTaskByID(id)));
         System.out.println(" ");
 
         System.out.println("Show tasks expiring in 2 days, with a readable data format");
@@ -67,6 +69,14 @@ public class Main {
             System.out.println("Status changed");
         } else {
             System.out.println("Error, status non changed");
+        }
+    }
+
+    private static void checkTaskNotNull(Task t) {
+        if (t != null) {
+            System.out.println(t);
+        } else {
+            System.out.println("Error, Id is not correct");
         }
     }
 
